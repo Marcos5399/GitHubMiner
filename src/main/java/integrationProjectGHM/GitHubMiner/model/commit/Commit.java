@@ -21,7 +21,7 @@ public class Commit {
     @JsonProperty("comments_url")
     private String commentsUrl;
     @JsonProperty("commit")
-    private Commit__1 commit;
+    private Commit__1 commit; // Llamar aquí para obtener el mensaje
     @JsonProperty("author")
     private Author author;
     @JsonProperty("committer")

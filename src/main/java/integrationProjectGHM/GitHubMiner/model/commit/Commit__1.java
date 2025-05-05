@@ -13,7 +13,7 @@ public class Commit__1 {
     private Author author;
     @JsonProperty("committer")
     private Committer committer;
-    @JsonProperty("message") // Constituye al campo message del GitMiner
+    @JsonProperty("message") // Constituye al campo message del GitMiner y también al title
     private String message;
     @JsonProperty("tree")
     private Tree tree;

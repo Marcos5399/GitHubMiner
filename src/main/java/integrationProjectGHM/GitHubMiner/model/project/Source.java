@@ -2,13 +2,14 @@
 package integrationProjectGHM.GitHubMiner.model.project;
 
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Project {
+public class Source {
 
     @JsonProperty("id")
     private Integer id;
@@ -19,10 +20,10 @@ public class Project {
     @JsonProperty("full_name")
     private String fullName;
     @JsonProperty("owner")
-    private Owner owner;
+    private Owner__3 owner;
     @JsonProperty("private")
     private Boolean _private;
-    @JsonProperty("html_url") // Constituye a web_url
+    @JsonProperty("html_url")
     private String htmlUrl;
     @JsonProperty("description")
     private String description;
@@ -70,11 +71,9 @@ public class Project {
     private String issueCommentUrl;
     @JsonProperty("issue_events_url")
     private String issueEventsUrl;
-    @JsonProperty("issues_url") // Para relacionarlo con issue
+    @JsonProperty("issues_url")
     private String issuesUrl;
-    /*
     @JsonProperty("keys_url")
-
     private String keysUrl;
     @JsonProperty("labels_url")
     private String labelsUrl;
@@ -118,22 +117,16 @@ public class Project {
     private String homepage;
     @JsonProperty("forks_count")
     private Integer forksCount;
-    @JsonProperty("forks")
-    private Integer forks;
     @JsonProperty("stargazers_count")
     private Integer stargazersCount;
     @JsonProperty("watchers_count")
     private Integer watchersCount;
-    @JsonProperty("watchers")
-    private Integer watchers;
     @JsonProperty("size")
     private Integer size;
     @JsonProperty("default_branch")
     private String defaultBranch;
     @JsonProperty("open_issues_count")
     private Integer openIssuesCount;
-    @JsonProperty("open_issues")
-    private Integer openIssues;
     @JsonProperty("is_template")
     private Boolean isTemplate;
     @JsonProperty("topics")
@@ -148,8 +141,6 @@ public class Project {
     private Boolean hasPages;
     @JsonProperty("has_downloads")
     private Boolean hasDownloads;
-    @JsonProperty("has_discussions")
-    private Boolean hasDiscussions;
     @JsonProperty("archived")
     private Boolean archived;
     @JsonProperty("disabled")
@@ -163,11 +154,9 @@ public class Project {
     @JsonProperty("updated_at")
     private String updatedAt;
     @JsonProperty("permissions")
-    private Permissions permissions;
+    private Permissions__3 permissions;
     @JsonProperty("allow_rebase_merge")
     private Boolean allowRebaseMerge;
-    @JsonProperty("template_repository")
-    private TemplateRepository templateRepository;
     @JsonProperty("temp_clone_token")
     private String tempCloneToken;
     @JsonProperty("allow_squash_merge")
@@ -178,21 +167,20 @@ public class Project {
     private Boolean deleteBranchOnMerge;
     @JsonProperty("allow_merge_commit")
     private Boolean allowMergeCommit;
-    @JsonProperty("allow_forking")
-    private Boolean allowForking;
     @JsonProperty("subscribers_count")
     private Integer subscribersCount;
     @JsonProperty("network_count")
     private Integer networkCount;
     @JsonProperty("license")
-    private License__1 license;
-    @JsonProperty("organization")
-    private Organization organization;
-    @JsonProperty("parent")
-    private Parent parent;
-    @JsonProperty("source")
-    private Source source;
-    */
+    private License__3 license;
+    @JsonProperty("forks")
+    private Integer forks;
+    @JsonProperty("open_issues")
+    private Integer openIssues;
+    @JsonProperty("watchers")
+    private Integer watchers;
+    @JsonProperty("security_and_analysis")
+    private SecurityAndAnalysis securityAndAnalysis;
 
     @JsonProperty("id")
     public Integer getId() {
@@ -235,12 +223,12 @@ public class Project {
     }
 
     @JsonProperty("owner")
-    public Owner getOwner() {
+    public Owner__3 getOwner() {
         return owner;
     }
 
     @JsonProperty("owner")
-    public void setOwner(Owner owner) {
+    public void setOwner(Owner__3 owner) {
         this.owner = owner;
     }
 
@@ -504,7 +492,6 @@ public class Project {
         this.issuesUrl = issuesUrl;
     }
 
-    /*
     @JsonProperty("keys_url")
     public String getKeysUrl() {
         return keysUrl;
@@ -725,16 +712,6 @@ public class Project {
         this.forksCount = forksCount;
     }
 
-    @JsonProperty("forks")
-    public Integer getForks() {
-        return forks;
-    }
-
-    @JsonProperty("forks")
-    public void setForks(Integer forks) {
-        this.forks = forks;
-    }
-
     @JsonProperty("stargazers_count")
     public Integer getStargazersCount() {
         return stargazersCount;
@@ -753,16 +730,6 @@ public class Project {
     @JsonProperty("watchers_count")
     public void setWatchersCount(Integer watchersCount) {
         this.watchersCount = watchersCount;
-    }
-
-    @JsonProperty("watchers")
-    public Integer getWatchers() {
-        return watchers;
-    }
-
-    @JsonProperty("watchers")
-    public void setWatchers(Integer watchers) {
-        this.watchers = watchers;
     }
 
     @JsonProperty("size")
@@ -793,16 +760,6 @@ public class Project {
     @JsonProperty("open_issues_count")
     public void setOpenIssuesCount(Integer openIssuesCount) {
         this.openIssuesCount = openIssuesCount;
-    }
-
-    @JsonProperty("open_issues")
-    public Integer getOpenIssues() {
-        return openIssues;
-    }
-
-    @JsonProperty("open_issues")
-    public void setOpenIssues(Integer openIssues) {
-        this.openIssues = openIssues;
     }
 
     @JsonProperty("is_template")
@@ -875,16 +832,6 @@ public class Project {
         this.hasDownloads = hasDownloads;
     }
 
-    @JsonProperty("has_discussions")
-    public Boolean getHasDiscussions() {
-        return hasDiscussions;
-    }
-
-    @JsonProperty("has_discussions")
-    public void setHasDiscussions(Boolean hasDiscussions) {
-        this.hasDiscussions = hasDiscussions;
-    }
-
     @JsonProperty("archived")
     public Boolean getArchived() {
         return archived;
@@ -946,12 +893,12 @@ public class Project {
     }
 
     @JsonProperty("permissions")
-    public Permissions getPermissions() {
+    public Permissions__3 getPermissions() {
         return permissions;
     }
 
     @JsonProperty("permissions")
-    public void setPermissions(Permissions permissions) {
+    public void setPermissions(Permissions__3 permissions) {
         this.permissions = permissions;
     }
 
@@ -963,16 +910,6 @@ public class Project {
     @JsonProperty("allow_rebase_merge")
     public void setAllowRebaseMerge(Boolean allowRebaseMerge) {
         this.allowRebaseMerge = allowRebaseMerge;
-    }
-
-    @JsonProperty("template_repository")
-    public TemplateRepository getTemplateRepository() {
-        return templateRepository;
-    }
-
-    @JsonProperty("template_repository")
-    public void setTemplateRepository(TemplateRepository templateRepository) {
-        this.templateRepository = templateRepository;
     }
 
     @JsonProperty("temp_clone_token")
@@ -1025,16 +962,6 @@ public class Project {
         this.allowMergeCommit = allowMergeCommit;
     }
 
-    @JsonProperty("allow_forking")
-    public Boolean getAllowForking() {
-        return allowForking;
-    }
-
-    @JsonProperty("allow_forking")
-    public void setAllowForking(Boolean allowForking) {
-        this.allowForking = allowForking;
-    }
-
     @JsonProperty("subscribers_count")
     public Integer getSubscribersCount() {
         return subscribersCount;
@@ -1056,50 +983,59 @@ public class Project {
     }
 
     @JsonProperty("license")
-    public License__1 getLicense() {
+    public License__3 getLicense() {
         return license;
     }
 
     @JsonProperty("license")
-    public void setLicense(License__1 license) {
+    public void setLicense(License__3 license) {
         this.license = license;
     }
 
-    @JsonProperty("organization")
-    public Organization getOrganization() {
-        return organization;
+    @JsonProperty("forks")
+    public Integer getForks() {
+        return forks;
     }
 
-    @JsonProperty("organization")
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    @JsonProperty("forks")
+    public void setForks(Integer forks) {
+        this.forks = forks;
     }
 
-    @JsonProperty("parent")
-    public Parent getParent() {
-        return parent;
+    @JsonProperty("open_issues")
+    public Integer getOpenIssues() {
+        return openIssues;
     }
 
-    @JsonProperty("parent")
-    public void setParent(Parent parent) {
-        this.parent = parent;
+    @JsonProperty("open_issues")
+    public void setOpenIssues(Integer openIssues) {
+        this.openIssues = openIssues;
     }
 
-    @JsonProperty("source")
-    public Source getSource() {
-        return source;
+    @JsonProperty("watchers")
+    public Integer getWatchers() {
+        return watchers;
     }
 
-    @JsonProperty("source")
-    public void setSource(Source source) {
-        this.source = source;
+    @JsonProperty("watchers")
+    public void setWatchers(Integer watchers) {
+        this.watchers = watchers;
     }
-    */
+
+    @JsonProperty("security_and_analysis")
+    public SecurityAndAnalysis getSecurityAndAnalysis() {
+        return securityAndAnalysis;
+    }
+
+    @JsonProperty("security_and_analysis")
+    public void setSecurityAndAnalysis(SecurityAndAnalysis securityAndAnalysis) {
+        this.securityAndAnalysis = securityAndAnalysis;
+    }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Project.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Source.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
@@ -1224,7 +1160,6 @@ public class Project {
         sb.append('=');
         sb.append(((this.issuesUrl == null)?"<null>":this.issuesUrl));
         sb.append(',');
-        /*
         sb.append("keysUrl");
         sb.append('=');
         sb.append(((this.keysUrl == null)?"<null>":this.keysUrl));
@@ -1313,10 +1248,6 @@ public class Project {
         sb.append('=');
         sb.append(((this.forksCount == null)?"<null>":this.forksCount));
         sb.append(',');
-        sb.append("forks");
-        sb.append('=');
-        sb.append(((this.forks == null)?"<null>":this.forks));
-        sb.append(',');
         sb.append("stargazersCount");
         sb.append('=');
         sb.append(((this.stargazersCount == null)?"<null>":this.stargazersCount));
@@ -1324,10 +1255,6 @@ public class Project {
         sb.append("watchersCount");
         sb.append('=');
         sb.append(((this.watchersCount == null)?"<null>":this.watchersCount));
-        sb.append(',');
-        sb.append("watchers");
-        sb.append('=');
-        sb.append(((this.watchers == null)?"<null>":this.watchers));
         sb.append(',');
         sb.append("size");
         sb.append('=');
@@ -1340,10 +1267,6 @@ public class Project {
         sb.append("openIssuesCount");
         sb.append('=');
         sb.append(((this.openIssuesCount == null)?"<null>":this.openIssuesCount));
-        sb.append(',');
-        sb.append("openIssues");
-        sb.append('=');
-        sb.append(((this.openIssues == null)?"<null>":this.openIssues));
         sb.append(',');
         sb.append("isTemplate");
         sb.append('=');
@@ -1372,10 +1295,6 @@ public class Project {
         sb.append("hasDownloads");
         sb.append('=');
         sb.append(((this.hasDownloads == null)?"<null>":this.hasDownloads));
-        sb.append(',');
-        sb.append("hasDiscussions");
-        sb.append('=');
-        sb.append(((this.hasDiscussions == null)?"<null>":this.hasDiscussions));
         sb.append(',');
         sb.append("archived");
         sb.append('=');
@@ -1409,10 +1328,6 @@ public class Project {
         sb.append('=');
         sb.append(((this.allowRebaseMerge == null)?"<null>":this.allowRebaseMerge));
         sb.append(',');
-        sb.append("templateRepository");
-        sb.append('=');
-        sb.append(((this.templateRepository == null)?"<null>":this.templateRepository));
-        sb.append(',');
         sb.append("tempCloneToken");
         sb.append('=');
         sb.append(((this.tempCloneToken == null)?"<null>":this.tempCloneToken));
@@ -1433,10 +1348,6 @@ public class Project {
         sb.append('=');
         sb.append(((this.allowMergeCommit == null)?"<null>":this.allowMergeCommit));
         sb.append(',');
-        sb.append("allowForking");
-        sb.append('=');
-        sb.append(((this.allowForking == null)?"<null>":this.allowForking));
-        sb.append(',');
         sb.append("subscribersCount");
         sb.append('=');
         sb.append(((this.subscribersCount == null)?"<null>":this.subscribersCount));
@@ -1449,19 +1360,22 @@ public class Project {
         sb.append('=');
         sb.append(((this.license == null)?"<null>":this.license));
         sb.append(',');
-        sb.append("organization");
+        sb.append("forks");
         sb.append('=');
-        sb.append(((this.organization == null)?"<null>":this.organization));
+        sb.append(((this.forks == null)?"<null>":this.forks));
         sb.append(',');
-        sb.append("parent");
+        sb.append("openIssues");
         sb.append('=');
-        sb.append(((this.parent == null)?"<null>":this.parent));
+        sb.append(((this.openIssues == null)?"<null>":this.openIssues));
         sb.append(',');
-        sb.append("source");
+        sb.append("watchers");
         sb.append('=');
-        sb.append(((this.source == null)?"<null>":this.source));
+        sb.append(((this.watchers == null)?"<null>":this.watchers));
         sb.append(',');
-        */
+        sb.append("securityAndAnalysis");
+        sb.append('=');
+        sb.append(((this.securityAndAnalysis == null)?"<null>":this.securityAndAnalysis));
+        sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
         } else {
