@@ -1,7 +1,6 @@
 package integrationProjectGHM.GitHubMiner.controller;
 
 
-import integrationProjectGHM.GitHubMiner.model.issue.Issue;
 import integrationProjectGHM.GitHubMiner.model.project.Project;
 import integrationProjectGHM.GitHubMiner.modelsGitHubMiner.CommitGitHubMiner;
 import integrationProjectGHM.GitHubMiner.modelsGitHubMiner.IssueGitHubMiner;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import java.util.ArrayList;
 import java.util.List;
 import static integrationProjectGHM.GitHubMiner.util.Formatters.commitFormatter;
 import static integrationProjectGHM.GitHubMiner.util.Formatters.issueFormatter;
