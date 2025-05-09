@@ -77,7 +77,7 @@ public class Formatters {
                 UserGitHubMiner.create(
                         comment.getUser().getId().toString(),
                         comment.getUser().getLogin(),
-                        comment.getUser().getName(),
+                        comment.getUser().getLogin(), // Los user de los comments no tienen campo "name" solo el "Login"
                         comment.getUser().getAvatarUrl(),
                         comment.getUser().getHtmlUrl()
                 )

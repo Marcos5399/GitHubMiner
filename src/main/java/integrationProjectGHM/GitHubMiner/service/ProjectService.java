@@ -33,7 +33,7 @@ public class ProjectService {
     // A partir de aquí comenzamos a definir métodos para cada operación que queramos hacer con la API de GitHub para los Projects
     // https://api.github.com/users/{username}/repos
     public ResponseEntity<Project[]> getAllUserProjects (String username){
-        String uri = "https://api.github.com/users/" + username + "/" + "/repos";
+        String uri = "https://api.github.com/users/" + username + "/repos";
         return getResponseEntity(restTemplate, uri, token, Project[].class);
     }
 
