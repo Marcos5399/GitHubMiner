@@ -1,11 +1,10 @@
 
-package integrationProjectGHM.GitHubMiner.model.issue;
+package integrationProjectGHM.GitHubMiner.model.project;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Creator {
+public class Owner__2 {
 
     @JsonProperty("login")
     private String login;
@@ -227,7 +226,7 @@ public class Creator {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Creator.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Owner__2 .class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("login");
         sb.append('=');
         sb.append(((this.login == null)?"<null>":this.login));

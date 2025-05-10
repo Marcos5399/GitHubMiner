@@ -1,45 +1,41 @@
-
 package integrationProjectGHM.GitHubMiner.model.issue;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Label {
-
     @JsonProperty("id")
-    private Integer id;
+    private long id;
     @JsonProperty("node_id")
-    private String nodeId;
+    private String node_id;
     @JsonProperty("url")
     private String url;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("description")
-    private String description;
     @JsonProperty("color")
     private String color;
     @JsonProperty("default")
-    private Boolean _default;
+    private boolean isDefault;
+    @JsonProperty("description")
+    private String description;
 
     @JsonProperty("id")
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
     @JsonProperty("node_id")
     public String getNodeId() {
-        return nodeId;
+        return node_id;
     }
 
     @JsonProperty("node_id")
-    public void setNodeId(String nodeId) {
-        this.nodeId = nodeId;
+    public void setNodeId(String node_id) {
+        this.node_id = node_id;
     }
 
     @JsonProperty("url")
@@ -62,16 +58,6 @@ public class Label {
         this.name = name;
     }
 
-    @JsonProperty("description")
-    public String getDescription() {
-        return description;
-    }
-
-    @JsonProperty("description")
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     @JsonProperty("color")
     public String getColor() {
         return color;
@@ -83,53 +69,37 @@ public class Label {
     }
 
     @JsonProperty("default")
-    public Boolean getDefault() {
-        return _default;
+    public boolean isDefault() {
+        return isDefault;
     }
 
     @JsonProperty("default")
-    public void setDefault(Boolean _default) {
-        this._default = _default;
+    public void setDefault(boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
+    }
+
+    @JsonProperty("description")
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Label.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("id");
-        sb.append('=');
-        sb.append(((this.id == null)?"<null>":this.id));
-        sb.append(',');
-        sb.append("nodeId");
-        sb.append('=');
-        sb.append(((this.nodeId == null)?"<null>":this.nodeId));
-        sb.append(',');
-        sb.append("url");
-        sb.append('=');
-        sb.append(((this.url == null)?"<null>":this.url));
-        sb.append(',');
-        sb.append("name");
-        sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
-        sb.append(',');
-        sb.append("description");
-        sb.append('=');
-        sb.append(((this.description == null)?"<null>":this.description));
-        sb.append(',');
-        sb.append("color");
-        sb.append('=');
-        sb.append(((this.color == null)?"<null>":this.color));
-        sb.append(',');
-        sb.append("_default");
-        sb.append('=');
-        sb.append(((this._default == null)?"<null>":this._default));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
-        }
+        sb.append("id=").append(id).append(',');
+        sb.append("node_id=").append(node_id).append(',');
+        sb.append("url=").append(url).append(',');
+        sb.append("name=").append(name).append(',');
+        sb.append("color=").append(color).append(',');
+        sb.append("default=").append(isDefault).append(',');
+        sb.append("description=").append(description).append(']');
         return sb.toString();
     }
-
 }
+

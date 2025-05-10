@@ -1,12 +1,10 @@
 
-package integrationProjectGHM.GitHubMiner.model.issue;
+package integrationProjectGHM.GitHubMiner.model.project;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ClosedBy {
+public class Owner__1 {
 
     @JsonProperty("login")
     private String login;
@@ -42,8 +40,6 @@ public class ClosedBy {
     private String receivedEventsUrl;
     @JsonProperty("type")
     private String type;
-    @JsonProperty("user_view_type")
-    private String userViewType;
     @JsonProperty("site_admin")
     private Boolean siteAdmin;
 
@@ -217,16 +213,6 @@ public class ClosedBy {
         this.type = type;
     }
 
-    @JsonProperty("user_view_type")
-    public String getUserViewType() {
-        return userViewType;
-    }
-
-    @JsonProperty("user_view_type")
-    public void setUserViewType(String userViewType) {
-        this.userViewType = userViewType;
-    }
-
     @JsonProperty("site_admin")
     public Boolean getSiteAdmin() {
         return siteAdmin;
@@ -240,7 +226,7 @@ public class ClosedBy {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ClosedBy.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Owner__1 .class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("login");
         sb.append('=');
         sb.append(((this.login == null)?"<null>":this.login));
@@ -308,10 +294,6 @@ public class ClosedBy {
         sb.append("type");
         sb.append('=');
         sb.append(((this.type == null)?"<null>":this.type));
-        sb.append(',');
-        sb.append("userViewType");
-        sb.append('=');
-        sb.append(((this.userViewType == null)?"<null>":this.userViewType));
         sb.append(',');
         sb.append("siteAdmin");
         sb.append('=');

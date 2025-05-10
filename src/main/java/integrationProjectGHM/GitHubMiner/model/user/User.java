@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 // Si la respuesta JSON tiene menos campos que los que tenemos en la clase, los campos sobrantes simplemente se inicializan a null.
 public class User {
 
-    @JsonProperty("login")
+    @JsonProperty("login") // username en GitMiner
     private String login;
     @JsonProperty("id") // user_id en GitMiner
     private Integer id;

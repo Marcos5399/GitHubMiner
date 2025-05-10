@@ -9,7 +9,7 @@ import integrationProjectGHM.GitHubMiner.model.user.User;
 public class Comment {
 
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
     @JsonProperty("node_id")
     private String nodeId;
     @JsonProperty("url")
@@ -30,12 +30,12 @@ public class Comment {
     private String authorAssociation;
 
     @JsonProperty("id")
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
