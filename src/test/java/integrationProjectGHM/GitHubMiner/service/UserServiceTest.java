@@ -17,7 +17,7 @@ class UserServiceTest {
 
     @Test
     @DisplayName("Get all users")
-    void getAllIssues() {
+    void getAllUsers() {
         ResponseEntity<User[]> response = userService.getAllUsers();
         List<User> users = List.of(response.getBody());
         assertFalse(users.isEmpty(), "User list should not be empty");

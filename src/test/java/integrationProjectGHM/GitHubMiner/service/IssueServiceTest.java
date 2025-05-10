@@ -46,7 +46,7 @@ class IssueServiceTest {
                 "octocat",                  // owner
                 "Hello-World",              // repo
                 30,                        // updatedSinceDays (últimos 30 días)
-                2                         // maxPages (páginas 1 y 2)
+                3                       // maxPages (páginas 1 y 2)---> Probar con 6 y ver que con 5 páginas ya se rellenan todos en este caso
         );
 
         assertFalse(issues.isEmpty());
